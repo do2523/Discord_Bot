@@ -18,7 +18,7 @@ const commands = [
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
-(async () => {
+async function registerSlashCommands() {
   try {
     console.log('Registering slash commands...');
 
@@ -32,6 +32,8 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
     console.log('Slash commands were registered successfully!');
   } catch (error) {
-    console.log(`There was an error: ${error}`);
+    console.log(`There was an error registering slash commands: ${error}`);
   }
-})();
+}
+
+registerSlashCommands();
